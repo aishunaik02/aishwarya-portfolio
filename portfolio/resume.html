@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya B. - Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Outfit',-apple-system,sans-serif;
+  background:#060813;
+  color:#1e293b;
+  line-height:1.5;
+  padding:30px 15px;
+}
+.page-wrapper{max-width:850px;margin:0 auto}
+.action-bar{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;
+  font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:none;transition:.2s;
+}
+.btn-back{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.btn-back:hover{background:rgba(255,255,255,0.2)}
+.btn-print{background:linear-gradient(135deg,#a855f7,#6366f1);color:#fff;box-shadow:0 4px 15px rgba(168,85,247,0.4)}
+.btn-print:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(168,85,247,0.6)}
+
+/* Printable Resume Card */
+.resume-sheet{
+  background:#ffffff;
+  color:#1e293b;
+  border-radius:16px;
+  padding:45px 50px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+.resume-header{text-align:center;border-bottom:2px solid #e2e8f0;padding-bottom:18px;margin-bottom:22px}
+.candidate-name{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:#0f172a;margin-bottom:8px;letter-spacing:-0.5px}
+.contact-row{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;font-size:13.5px;color:#475569}
+.contact-item{display:inline-flex;align-items:center;gap:6px;color:#334155;text-decoration:none}
+.contact-item:hover{color:#7c3aed}
+
+.resume-section{margin-bottom:22px}
+.section-title{
+  font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:#0f172a;
+  text-transform:uppercase;letter-spacing:1px;border-bottom:1.5px solid #cbd5e1;padding-bottom:4px;margin-bottom:12px;
+}
+.skill-line{margin-bottom:6px;font-size:14px;color:#334155}
+.skill-line strong{color:#0f172a;min-width:120px;display:inline-block}
+
+.item-block{margin-bottom:14px}
+.item-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.item-title{font-size:15.5px;font-weight:700;color:#0f172a}
+.item-subtitle{font-size:14px;color:#64748b;font-weight:500}
+.item-date{font-size:13.5px;color:#64748b;font-weight:600}
+.item-score{font-size:13.5px;color:#7c3aed;font-weight:600;margin-top:2px}
+
+ul.bullet-list{padding-left:18px;margin-top:4px}
+ul.bullet-list li{font-size:13.5px;color:#475569;margin-bottom:4px;line-height:1.45}
+
+@media print{
+  body{background:#fff;padding:0}
+  .action-bar{display:none}
+  .resume-sheet{box-shadow:none;border-radius:0;padding:20px 25px}
+}
+@media(max-width:600px){
+  .resume-sheet{padding:25px 20px}
+  .contact-row{flex-direction:column;gap:6px;align-items:center}
+  .item-head{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="action-bar">
+    <a href="index.html" class="btn btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    <button onclick="window.print()" class="btn btn-print"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
+  </div>
+
+  <article class="resume-sheet">
+    <header class="resume-header">
+      <h1 class="candidate-name">Aishwarya B</h1>
+      <div class="contact-row">
+        <span class="contact-item"><i class="fa-solid fa-phone"></i> +91 9108580357</span>
+        <a href="mailto:aishunaik733@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> aishunaik733@gmail.com</a>
+        <a href="https://www.linkedin.com/in/aishwarya-b-1446b1438" target="_blank" rel="noopener" class="contact-item"><i class="fa-brands fa-linkedin"></i> aishwarya-b-1446b1438</a>
+        <a href="https://github.com/aishunaik02" target="_blank" rel="noopener" class="contact-item"><i class="fa-brands fa-github"></i> aishunaik02</a>
+      </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="resume-section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-line"><strong>Programming:</strong> Python, C, Java (Learning)</div>
+      <div class="skill-line"><strong>Frontend:</strong> HTML, CSS, JavaScript</div>
+      <div class="skill-line"><strong>Core:</strong> DSA (Learning), OOPs (Learning), Problem Solving</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="resume-section">
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="item-block">
+        <div class="item-head">
+          <span class="item-title">Water Turbidity Measuring System</span>
+          <span class="item-date">3 Months</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed a system to check water quality and detect dirty or unclear water in real time.</li>
+          <li>Helped connect the water turbidity sensor, contributed to coding, and tested the system using different water samples.</li>
+          <li>Contributed to developing a system that helps identify water quality and supports safer water monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="item-block">
+        <div class="item-head">
+          <span class="item-title">IoT Enabled Fire Alarm System</span>
+          <span class="item-date">3 Months</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed an IoT-based system that detects fire quickly and provides an immediate alert.</li>
+          <li>Helped connect sensors, contributed to the coding, and assisted in comprehensive system testing.</li>
+          <li>Contributed to a safety system designed to help reduce potential damage and loss.</li>
+        </ul>
+      </div>
+
+      <div class="item-block">
+        <div class="item-head">
+          <span class="item-title">Interactive Mini Web Games (Memory Match, Number Guesser, Tic Tac Toe)</span>
+          <span class="item-date">Mini Projects</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Engineered interactive web applications using clean JavaScript DOM manipulation and responsive CSS styling.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="resume-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="item-block">
+        <div class="item-head">
+          <div>
+            <span class="item-title">CodeAlpha</span> — <span class="item-subtitle">Participant</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Participated in programming tasks and gained practical experience in coding and problem solving.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="resume-section">
+      <h2 class="section-title">Achievements</h2>
+      <ul class="bullet-list">
+        <li>Participated in CodeAlpha programming activities.</li>
+      </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section class="resume-section">
+      <h2 class="section-title">Education</h2>
+      
+      <div class="item-block">
+        <div class="item-head">
+          <div>
+            <span class="item-title">Bachelor of Engineering (B.E.) – Computer Science and Engineering</span>
+            <div class="item-subtitle">Adichunchanagiri Institute of Technology, Chikamagaluru</div>
+          </div>
+          <span class="item-date">2025–2029</span>
+        </div>
+        <div class="item-score">CGPA: 8.30</div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-head">
+          <div>
+            <span class="item-title">PUC – PCMC</span>
+            <div class="item-subtitle">S. Nijalingappa PU College, Hosadurga</div>
+          </div>
+          <span class="item-date">2023–2025</span>
+        </div>
+        <div class="item-score">Percentage: 79.83%</div>
+      </div>
+
+      <div class="item-block">
+        <div class="item-head">
+          <div>
+            <span class="item-title">SSLC</span>
+            <div class="item-subtitle">SMT Indira Gandhi Residential School, Madadakere</div>
+          </div>
+          <span class="item-date">2022–2023</span>
+        </div>
+        <div class="item-score">Percentage: 85.74%</div>
+      </div>
+    </section>
+  </article>
+</div>
+</body>
+</html>

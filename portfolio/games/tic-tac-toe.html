@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tic Tac Toe | Aishwarya B. Mini Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  padding:20px 15px; font-family:'Outfit',Arial,sans-serif;
+  background:linear-gradient(135deg,#060813,#17153a,#1e1b4b); color:#fff;
+}
+.top-bar{width:100%;max-width:440px;margin-bottom:15px;display:flex;justify-content:space-between;align-items:center}
+.back-btn{color:#06b6d4;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);padding:8px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);transition:.2s}
+.back-btn:hover{background:rgba(6,182,212,0.2);color:#fff}
+.card{
+  width:100%; max-width:440px; background:rgba(18,22,48,0.75); backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.12); border-radius:24px; padding:28px 24px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.5); text-align:center;
+}
+h1{margin:0 0 7px;font-size:28px;background:linear-gradient(135deg,#ec4899,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#94a3b8;margin-bottom:18px;font-size:15px}
+.score{display:flex;justify-content:space-around;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px;margin-bottom:18px}
+.score div{font-size:14px;color:#94a3b8}
+.score b{display:block;font-size:22px;margin-top:4px;color:#fff}
+.score div:first-child b{color:#ec4899}
+.score div:last-child b{color:#06b6d4}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:320px;margin:auto}
+.cell{aspect-ratio:1;border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:rgba(255,255,255,0.04);font-size:46px;font-weight:800;color:#fff;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+.cell:hover:not(:disabled){background:rgba(168,85,247,0.2);border-color:#a855f7;transform:scale(1.04)}
+.cell:disabled{cursor:default}
+.status{min-height:28px;margin:18px 0;font-weight:600;font-size:16px;color:#ffd166}
+button.reset{width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(135deg,#a855f7,#6366f1);color:white;font-size:16px;font-weight:bold;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(168,85,247,0.4);transition:.2s}
+button.reset:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(168,85,247,0.6)}
+.small{font-size:13px;color:#64748b;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="../index.html#projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+  <span style="font-size:13px;color:#94a3b8">Aishwarya B. Mini Project</span>
+</div>
+<div class="card">
+<h1>⭕ Tic Tac Toe ❌</h1>
+<div class="sub">Two-player interactive game</div>
+<div class="score">
+<div>Player X<b id="xScore">0</b></div>
+<div>Draws<b id="drawScore">0</b></div>
+<div>Player O<b id="oScore">0</b></div>
+</div>
+<div class="board" id="board"></div>
+<div class="status" id="status">Player X's turn</div>
+<button class="reset" onclick="newGame()"><i class="fa-solid fa-rotate-right"></i> New Game</button>
+<div class="small">Built with HTML5, CSS3 & JavaScript by Aishwarya B.</div>
+</div>
+
+<script>
+const boardEl=document.getElementById("board"),statusEl=document.getElementById("status");
+let board=[],current="X",gameOver=false,xScore=0,oScore=0,drawScore=0;
+const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+function render(){
+ boardEl.innerHTML="";
+ board.forEach((v,i)=>{
+  const b=document.createElement("button"); b.className="cell"; b.textContent=v;
+  if(v==="X") b.style.color="#ec4899";
+  if(v==="O") b.style.color="#06b6d4";
+  b.disabled=!!v||gameOver; b.setAttribute("aria-label","Cell "+(i+1));
+  b.onclick=()=>play(i); boardEl.appendChild(b);
+ });
+}
+function winner(){
+ return wins.find(([a,b,c])=>board[a]&&board[a]===board[b]&&board[a]===board[c]);
+}
+function play(i){
+ if(board[i]||gameOver)return;
+ board[i]=current;
+ const win=winner();
+ if(win){
+  gameOver=true;
+  if(current==="X"){xScore++;document.getElementById("xScore").textContent=xScore}
+  else{oScore++;document.getElementById("oScore").textContent=oScore}
+  statusEl.textContent="🎉 Player "+current+" wins!";
+ }else if(board.every(Boolean)){
+  gameOver=true;drawScore++;document.getElementById("drawScore").textContent=drawScore;
+  statusEl.textContent="🤝 It's a draw!";
+ }else{
+  current=current==="X"?"O":"X";
+  statusEl.textContent="Player "+current+"'s turn";
+ }
+ render();
+}
+function newGame(){
+ board=Array(9).fill("");current="X";gameOver=false;
+ statusEl.textContent="Player X's turn";render();
+}
+newGame();
+</script>
+</body>
+</html>

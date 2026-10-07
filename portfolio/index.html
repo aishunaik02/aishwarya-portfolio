@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Aishwarya B. - Computer Science Engineering Graduate. Learning. Building. Experimenting. Becoming.">
+    <title>Aishwarya B. | Computer Science Engineering Graduate</title>
+    
+    <!-- Google Fonts: Space Grotesk & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Ambient Lighting Mesh & Glowing Spheres -->
+    <div class="ambient-glow sphere-purple" aria-hidden="true"></div>
+    <div class="ambient-glow sphere-cyan" aria-hidden="true"></div>
+    <div class="ambient-glow sphere-pink" aria-hidden="true"></div>
+    <div class="cyber-grid" aria-hidden="true"></div>
+
+    <!-- ================================================================= -->
+    <!-- 3. VERTICAL NAVIGATION BAR (LEFT SIDE)                            -->
+    <!-- ================================================================= -->
+    <aside class="vertical-navbar" id="verticalNavbar" aria-label="Main Navigation">
+        <div class="nav-brand">
+            <a href="#home" class="brand-logo" aria-label="Aishwarya B. Homepage">
+                <span class="logo-badge">&lt;A/&gt;</span>
+                <span class="logo-title">Aishwarya<span class="accent-glow-dot">.</span></span>
+            </a>
+        </div>
+
+        <nav class="nav-links-wrapper">
+            <ul class="nav-items-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">
+                        <i class="fa-solid fa-house nav-icon"></i>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">
+                        <i class="fa-solid fa-user-astronaut nav-icon"></i>
+                        <span class="nav-text">About Me</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link" data-section="education">
+                        <i class="fa-solid fa-graduation-cap nav-icon"></i>
+                        <span class="nav-text">Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-section="skills">
+                        <i class="fa-solid fa-laptop-code nav-icon"></i>
+                        <span class="nav-text">Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link" data-section="timeline">
+                        <i class="fa-solid fa-timeline nav-icon"></i>
+                        <span class="nav-text">Timeline</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-section="projects">
+                        <i class="fa-solid fa-folder-open nav-icon"></i>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume.html" target="_blank" class="nav-link" style="color: var(--accent-cyan);">
+                        <i class="fa-solid fa-file-pdf nav-icon"></i>
+                        <span class="nav-text">Resume</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#video-intro" class="nav-link" data-section="video-intro">
+                        <i class="fa-solid fa-circle-play nav-icon"></i>
+                        <span class="nav-text">Video Intro</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link" data-section="testimonials">
+                        <i class="fa-solid fa-comment-dots nav-icon"></i>
+                        <span class="nav-text">Testimonials</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#chat" class="nav-link" data-section="chat">
+                        <i class="fa-solid fa-robot nav-icon"></i>
+                        <span class="nav-text">Chat</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">
+                        <i class="fa-solid fa-paper-plane nav-icon"></i>
+                        <span class="nav-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="nav-footer-controls">
+            <!-- Quick Social Profiles in Sidebar -->
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.8rem; justify-content: center;">
+                <a href="https://www.linkedin.com/in/aishwarya-b-1446b1438" target="_blank" rel="noopener noreferrer" class="social-btn" style="width: 36px; height: 36px; font-size: 0.95rem;" aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/aishunaik02" target="_blank" rel="noopener noreferrer" class="social-btn" style="width: 36px; height: 36px; font-size: 0.95rem;" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:aishunaik733@gmail.com" class="social-btn" style="width: 36px; height: 36px; font-size: 0.95rem;" aria-label="Send Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <!-- Night Mode / Theme Toggle -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Night Mode" title="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon icon-moon"></i>
+                <i class="fa-solid fa-sun icon-sun"></i>
+                <span class="theme-label">Theme</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Header Bar for Small Screens -->
+    <header class="mobile-header" id="mobileHeader">
+        <a href="#home" class="brand-logo">
+            <span class="logo-badge">&lt;A/&gt;</span>
+            <span class="logo-title">Aishwarya<span class="accent-glow-dot">.</span></span>
+        </a>
+        <div class="mobile-header-actions">
+            <button class="theme-toggle-btn-mobile" id="themeToggleMobile" aria-label="Toggle Night Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- MAIN CONTENT AREA (Offset to right of Vertical Nav on Desktop)    -->
+    <!-- ================================================================= -->
+    <main class="page-content" id="main-content">
+
+        <!-- ============================================================= -->
+        <!-- 2. HERO SECTION                                               -->
+        <!-- ============================================================= -->
+        <section class="section hero-section" id="home">
+            <div class="container hero-layout">
+                <div class="hero-intro-text">
+                    <div class="status-pill">
+                        <span class="status-indicator"></span>
+                        <span class="status-caption">Open to Engineering Opportunities</span>
+                    </div>
+
+                    <h1 class="hero-heading">
+                        Hi, I’m <span class="gradient-name">Aishwarya B.</span>
+                    </h1>
+
+                    <h2 class="hero-subtitle">
+                        <span class="role-badge">Computer Science Engineering Graduate</span>
+                    </h2>
+
+                    <p class="hero-tagline">
+                        <span class="tagline-highlight">“Learning. Building. Experimenting. Becoming.”</span>
+                    </p>
+
+                    <p class="hero-bio-short">
+                        Dedicated to solving real-world challenges through technology, clean code, and engineering curiosity. Bridging hardware ingenuity with modern software systems.
+                    </p>
+
+                    <div class="hero-action-buttons">
+                        <a href="#projects" class="btn btn-primary-glow">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="resume.html" target="_blank" class="btn btn-primary-glow" style="background: linear-gradient(135deg,#ec4899,#8b5cf6);" aria-label="View Resume">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>View Resume</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aishwarya-b-1446b1438" target="_blank" rel="noopener noreferrer" class="btn btn-glass-purple" aria-label="Connect on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#chat" class="btn btn-glass-purple">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Chat with AI</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-cyan">
+                            <span>Get in Touch</span>
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-profile-container">
+                    <div class="profile-glow-halo">
+                        <div class="profile-image-frame glass-panel">
+                            <!-- Main Profile Photograph of Aishwarya B. -->
+                            <img src="assets/aishwarya_profile.jpg" alt="Photograph of Aishwarya B. - Computer Science Engineering Graduate" class="profile-img" id="heroProfileImg">
+                            <div class="profile-badge-overlay">
+                                <span class="badge-text"><i class="fa-solid fa-graduation-cap"></i> CSE Graduate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 4. ABOUT ME SECTION                                           -->
+        <!-- ============================================================= -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Profile Overview</span>
+                    <h2 class="section-heading">About <span class="gradient-name">Me</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid-layout">
+                    <!-- Profile Card Side -->
+                    <div class="about-image-card glass-panel">
+                        <div class="about-img-box">
+                            <img src="assets/aishwarya_profile.jpg" alt="Aishwarya B." class="about-portrait">
+                        </div>
+                        <div class="about-nameplate">
+                            <h3 class="nameplate-name">Aishwarya B.</h3>
+                            <p class="nameplate-role">Computer Science Engineer</p>
+                        </div>
+                    </div>
+
+                    <!-- Bio and Core Highlight Cards -->
+                    <div class="about-details-content">
+                        <div class="glass-panel bio-card">
+                            <h3 class="bio-title"><i class="fa-solid fa-terminal gradient-icon"></i> Biography & Background</h3>
+                            <p class="bio-text">
+                                I am a <strong>Computer Science Engineering graduate</strong> driven by a relentless passion for programming, problem-solving, learning new technologies, and building useful, impactful projects.
+                            </p>
+                            <p class="bio-text">
+                                My journey in computer science began with foundational curiosity about how computing systems shape our world. Over the course of my academic career, I have cultivated proficiency in programming languages such as <strong>C, Python, and Java</strong>, explored algorithmic problem-solving and data structures, and engineered IoT and sensor-driven solutions.
+                            </p>
+                            <p class="bio-text">
+                                Whether developing hardware-software integrations or modern web applications, I enjoy decomposing complex engineering problems into clean, scalable, and intuitive solutions.
+                            </p>
+                        </div>
+
+                        <!-- 3 Separate Highlight Information Cards -->
+                        <div class="about-highlights-grid">
+                            <div class="glass-panel highlight-card">
+                                <div class="highlight-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                                <h4 class="highlight-title">Graduate</h4>
+                                <p class="highlight-desc">Proud Computer Science Engineering graduate with a strong theoretical and practical base.</p>
+                            </div>
+
+                            <div class="glass-panel highlight-card">
+                                <div class="highlight-icon"><i class="fa-solid fa-microchip"></i></div>
+                                <h4 class="highlight-title">Computer Science Engineering</h4>
+                                <p class="highlight-desc">Deep enthusiasm for systems architecture, hardware-software interfacing, and software engineering.</p>
+                            </div>
+
+                            <div class="glass-panel highlight-card">
+                                <div class="highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                                <h4 class="highlight-title">Curiosity to Learn</h4>
+                                <p class="highlight-desc">Continually expanding technical horizons, experimenting with modern frameworks, and embracing new challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- EDUCATION SECTION                                             -->
+        <!-- ============================================================= -->
+        <section class="section education-section" id="education">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Academic Background</span>
+                    <h2 class="section-heading">My <span class="gradient-name">Education</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">The academic milestones that shaped my technical foundation and analytical mindset.</p>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Education Item 1: B.E. Computer Science -->
+                    <div class="education-card glass-panel featured-edu">
+                        <div class="edu-top-row">
+                            <div class="edu-icon-badge"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <span class="edu-period">2025 – 2029</span>
+                        </div>
+                        <h3 class="edu-degree">Bachelor of Engineering (B.E.)</h3>
+                        <h4 class="edu-major">Computer Science and Engineering</h4>
+                        <div class="edu-institution"><i class="fa-solid fa-building-columns"></i> Adichunchanagiri Institute of Technology, Chikamagaluru</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 0.8rem;">
+                            <i class="fa-solid fa-award"></i> CGPA: 8.30
+                        </div>
+                        <p class="edu-description">
+                            Core specialization in Data Structures, Algorithms, Operating Systems, Database Management Systems, Computer Networks, and Object-Oriented Software Design.
+                        </p>
+                        <div class="edu-tags">
+                            <span class="tag">DSA</span>
+                            <span class="tag">OOPs</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">C</span>
+                        </div>
+                    </div>
+
+                    <!-- Education Item 2: Pre-University Course -->
+                    <div class="education-card glass-panel">
+                        <div class="edu-top-row">
+                            <div class="edu-icon-badge"><i class="fa-solid fa-atom"></i></div>
+                            <span class="edu-period">2023 – 2025</span>
+                        </div>
+                        <h3 class="edu-degree">PUC – PCMC</h3>
+                        <h4 class="edu-major">Physics, Chemistry, Mathematics, Computer Science</h4>
+                        <div class="edu-institution"><i class="fa-solid fa-school"></i> S. Nijalingappa PU College, Hosadurga</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-purple); margin-bottom: 0.8rem;">
+                            <i class="fa-solid fa-chart-line"></i> Percentage: 79.83%
+                        </div>
+                        <p class="edu-description">
+                            Built strong analytical, mathematical, and computer science foundations with an early focus on algorithmic thinking and programming.
+                        </p>
+                        <div class="edu-tags">
+                            <span class="tag">Physics</span>
+                            <span class="tag">Chemistry</span>
+                            <span class="tag">Mathematics</span>
+                            <span class="tag">Computer Science</span>
+                        </div>
+                    </div>
+
+                    <!-- Education Item 3: Secondary Schooling -->
+                    <div class="education-card glass-panel">
+                        <div class="edu-top-row">
+                            <div class="edu-icon-badge"><i class="fa-solid fa-book-open"></i></div>
+                            <span class="edu-period">2022 – 2023</span>
+                        </div>
+                        <h3 class="edu-degree">SSLC (Class X)</h3>
+                        <h4 class="edu-major">Secondary School Leaving Certificate</h4>
+                        <div class="edu-institution"><i class="fa-solid fa-school-flag"></i> SMT Indira Gandhi Residential School, Madadakere</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-pink); margin-bottom: 0.8rem;">
+                            <i class="fa-solid fa-star"></i> Percentage: 85.74%
+                        </div>
+                        <p class="edu-description">
+                            Completed secondary school education with academic distinction and active participation in science and co-curricular programs.
+                        </p>
+                        <div class="edu-tags">
+                            <span class="tag">Science & Math</span>
+                            <span class="tag">85.74% Distinction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Technical Proficiency</span>
+                    <h2 class="section-heading">Core <span class="gradient-name">Skills</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">The programming languages, frameworks, and engineering competencies I utilize.</p>
+                </div>
+
+                <div class="skills-cards-grid">
+                    <!-- Skill 1: C -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-c">
+                            <i class="fa-solid fa-c"></i>
+                        </div>
+                        <h3 class="skill-name">C Programming</h3>
+                        <p class="skill-desc">
+                            Strong foundational knowledge of procedural programming, memory management, pointers, and low-level system design fundamentals.
+                        </p>
+                        <div class="skill-tag-pill">Core Language</div>
+                    </div>
+
+                    <!-- Skill 2: Python -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-python">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Python</h3>
+                        <p class="skill-desc">
+                            Versatile programming for algorithmic problem-solving, rapid prototyping, automation, sensor scripting, and data handling.
+                        </p>
+                        <div class="skill-tag-pill">Versatile & Scripting</div>
+                    </div>
+
+                    <!-- Skill 3: Java -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-java">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <h3 class="skill-name">Java</h3>
+                        <p class="skill-desc">
+                            Object-Oriented Programming (OOP) design principles, modular software construction, inheritance, polymorphism, and robust exception handling.
+                        </p>
+                        <div class="skill-tag-pill">Object-Oriented</div>
+                    </div>
+
+                    <!-- Skill 4: Data Structures -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-dsa">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h3 class="skill-name">Data Structures</h3>
+                        <p class="skill-desc">
+                            Proficiency in arrays, linked lists, stacks, queues, trees, graphs, hashing, and evaluating algorithmic time and space complexity.
+                        </p>
+                        <div class="skill-tag-pill">Computer Science Core</div>
+                    </div>
+
+                    <!-- Skill 5: Problem Solving -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-problem">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                        <h3 class="skill-name">Problem Solving</h3>
+                        <p class="skill-desc">
+                            Analytical mindset to break complex problems into methodical steps, optimize logic, and debug hardware and software bottlenecks.
+                        </p>
+                        <div class="skill-tag-pill">Analytical Thinking</div>
+                    </div>
+
+                    <!-- Skill 6: Web Development -->
+                    <div class="skill-card glass-panel">
+                        <div class="skill-icon-wrap icon-web">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="skill-name">Web Development</h3>
+                        <p class="skill-desc">
+                            Building clean, responsive, and interactive user interfaces using modern HTML5, CSS3, JavaScript, APIs, and modern web styling paradigms.
+                        </p>
+                        <div class="skill-tag-pill">Frontend & UI/UX</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 6. INTERACTIVE TIMELINE OF CAREER MILESTONES                  -->
+        <!-- ============================================================= -->
+        <section class="section timeline-section" id="timeline">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Learning Road & Milestones</span>
+                    <h2 class="section-heading">Career <span class="gradient-name">Timeline</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">A chronological roadmap of key learning stages and development achievements.</p>
+                </div>
+
+                <div class="timeline-tree">
+                    <!-- Milestone 1 -->
+                    <div class="timeline-row left">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge">Milestone 1</span>
+                            <h3 class="milestone-title">Engineering Begins</h3>
+                            <p class="milestone-desc">
+                                Stepped into the world of Computer Science Engineering, discovering the foundational logic, mathematics, and architectural concepts of computing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-row right">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge">Milestone 2</span>
+                            <h3 class="milestone-title">C Programming</h3>
+                            <p class="milestone-desc">
+                                Mastered structured programming, pointers, file handling, and memory management through C, building a rock-solid computational mindset.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-row left">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge">Milestone 3</span>
+                            <h3 class="milestone-title">Python</h3>
+                            <p class="milestone-desc">
+                                Broadened programming versatility by learning Python for rapid scripting, data manipulation, algorithm implementation, and automation workflows.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-row right">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge">Milestone 4</span>
+                            <h3 class="milestone-title">Mini Projects</h3>
+                            <p class="milestone-desc">
+                                Applied theoretical knowledge into real-world embedded and engineering applications, focusing on sensor-based monitoring and IoT architectures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="timeline-row left">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge">Milestone 5</span>
+                            <h3 class="milestone-title">Problem Solving</h3>
+                            <p class="milestone-desc">
+                                Deepened algorithmic problem-solving skills, practicing Data Structures, optimizing logic, and honing code efficiency.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 6 -->
+                    <div class="timeline-row right">
+                        <div class="timeline-pin"></div>
+                        <div class="timeline-box glass-panel">
+                            <span class="milestone-badge active-badge">Current Focus</span>
+                            <h3 class="milestone-title">Currently Growing</h3>
+                            <p class="milestone-desc">
+                                Continually expanding into full-stack web development, emerging AI paradigms, and preparing for high-impact software engineering roles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 7. PROJECTS SECTION WITH CLICKABLE THUMBNAILS                 -->
+        <!-- Note: Follows strict guidelines: only allowed projects included -->
+        <!-- ============================================================= -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Showcase</span>
+                    <h2 class="section-heading">Featured <span class="gradient-name">Projects</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">Click on any project thumbnail to explore detailed technical specifications.</p>
+                </div>
+
+                <div class="projects-grid-container">
+                    <!-- Project 1: IoT Enabled Fire Alarm System -->
+                    <!-- Connected to Project Modal via data-project="fire-alarm" -->
+                    <article class="project-thumbnail glass-panel" data-project="fire-alarm" tabindex="0" role="button" aria-label="View details for IoT Enabled Fire Alarm System">
+                        <div class="thumbnail-banner banner-fire">
+                            <img src="assets/fire_alarm.jpg" alt="IoT Enabled Fire Alarm System Infographic" class="project-thumbnail-img">
+                            <div class="banner-overlay"></div>
+                            <span class="project-category-tag"><i class="fa-solid fa-fire-flame-curved"></i> IoT & Safety</span>
+                        </div>
+                        <div class="thumbnail-content">
+                            <h3 class="project-card-title">IoT Enabled Fire Alarm System</h3>
+                            <p class="project-card-summary">
+                                An intelligent safety system designed to detect fire, smoke, and abrupt temperature anomalies using IoT sensors and automated alerting.
+                            </p>
+                            <div class="project-tags-list">
+                                <span class="tag">IoT</span>
+                                <span class="tag">Safety</span>
+                                <span class="tag">Hardware</span>
+                                <span class="tag">Problem Solving</span>
+                            </div>
+                            <div class="thumbnail-footer">
+                                <span class="view-detail-btn">Click to View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Water Turbidity Measuring System -->
+                    <!-- Connected to Project Modal via data-project="water-turbidity" -->
+                    <article class="project-thumbnail glass-panel" data-project="water-turbidity" tabindex="0" role="button" aria-label="View details for Water Turbidity Measuring System">
+                        <div class="thumbnail-banner banner-water">
+                            <img src="assets/water_turbidity.jpg" alt="Water Turbidity Measuring System Infographic" class="project-thumbnail-img">
+                            <div class="banner-overlay"></div>
+                            <span class="project-category-tag"><i class="fa-solid fa-droplet"></i> Water Quality</span>
+                        </div>
+                        <div class="thumbnail-content">
+                            <h3 class="project-card-title">Water Turbidity Measuring System</h3>
+                            <p class="project-card-summary">
+                                Precision water quality measurement device utilizing optical turbidity sensors and microcontrollers to calculate water clarity levels in real time.
+                            </p>
+                            <div class="project-tags-list">
+                                <span class="tag">Water Quality</span>
+                                <span class="tag">Sensors</span>
+                                <span class="tag">Measurement</span>
+                                <span class="tag">Technology</span>
+                            </div>
+                            <div class="thumbnail-footer">
+                                <span class="view-detail-btn">Click to View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: More Projects Coming Soon -->
+                    <!-- Connected to Project Modal / notification via data-project="coming-soon" -->
+                    <article class="project-thumbnail glass-panel coming-soon-card" data-project="coming-soon" tabindex="0" role="button" aria-label="More Projects Coming Soon">
+                        <div class="thumbnail-banner banner-coming">
+                            <div class="banner-overlay"></div>
+                            <span class="project-category-tag"><i class="fa-solid fa-sparkles"></i> In Development</span>
+                            <div class="banner-icon-watermark"><i class="fa-solid fa-hourglass-half"></i></div>
+                        </div>
+                        <div class="thumbnail-content">
+                            <h3 class="project-card-title">More Projects Coming Soon…</h3>
+                            <p class="project-card-summary">
+                                Actively engineering full-stack web applications, AI tools, and algorithmic systems. Updates will be released continuously!
+                            </p>
+                            <div class="project-tags-list">
+                                <span class="tag">Full Stack</span>
+                                <span class="tag">AI / ML</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                            <div class="thumbnail-footer">
+                                <span class="view-detail-btn">Stay Tuned <i class="fa-solid fa-clock"></i></span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal (Opens when a project thumbnail is clicked) -->
+        <div class="modal-overlay" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+            <div class="modal-dialog glass-panel">
+                <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close project details">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Populated dynamically via script.js based on clicked thumbnail -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- 8. SELF INTRODUCTION VIDEO SECTION                            -->
+        <!-- ============================================================= -->
+        <section class="section video-section" id="video-intro">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Personal Walkthrough</span>
+                    <h2 class="section-heading">Self-Introduction <span class="gradient-name">Video</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">Get to know Aishwarya B., her technical background, skills, learning journey, and career aspirations.</p>
+                </div>
+
+                <div class="video-player-container glass-panel">
+                    <div class="responsive-video-box" id="videoBox">
+                        <!-- Embedded HTML5 Video Player -->
+                        <video id="selfIntroVideo" class="embedded-video" src="assets/intro_video.mp4" controls preload="metadata" poster="assets/aishwarya_profile.jpg"></video>
+                        <div class="video-ambient-glow"></div>
+                        <div class="video-screen-content">
+                            <div class="video-play-orb" id="customPlayTrigger" role="button" tabindex="0" aria-label="Play Self-Introduction Video">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="video-overlay-info">
+                                <span class="video-time-tag"><i class="fa-regular fa-circle-play"></i> Watch Introduction</span>
+                                <h3 class="video-headline">“Aishwarya B. — Engineering, Passion & Ambition”</h3>
+                                <p class="video-caption-text">
+                                    Click to watch Aishwarya's self-introduction video covering her background in Computer Science Engineering, skills, and technical journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 9. TESTIMONIALS SECTION                                       -->
+        <!-- ============================================================= -->
+        <section class="section testimonials-section" id="testimonials">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Endorsements & Feedback</span>
+                    <h2 class="section-heading">Academic & Mentorship <span class="gradient-name">Testimonials</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">Perspectives from professors, project mentors, and academic peers on collaborating with Aishwarya B.</p>
+                </div>
+
+                <div class="testimonials-grid-layout">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="quote-sign"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="testimonial-feedback">
+                            “Aishwarya demonstrated strong dedication, curiosity, and disciplined problem-solving throughout her computer science coursework. Her ability to translate concepts into practical implementations is commendable.”
+                        </p>
+                        <div class="testimonial-author-box">
+                            <div class="author-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div class="author-meta">
+                                <h4 class="author-name">Senior Department Professor</h4>
+                                <p class="author-role">Department of Computer Science & Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="quote-sign"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="testimonial-feedback">
+                            “During project collaborations, Aishwarya's systematic approach to debugging hardware sensors and structuring software logic made our team execution smooth and reliable.”
+                        </p>
+                        <div class="testimonial-author-box">
+                            <div class="author-icon"><i class="fa-solid fa-users-gear"></i></div>
+                            <div class="author-meta">
+                                <h4 class="author-name">Project Teammate & Peer</h4>
+                                <p class="author-role">Engineering Project Collaborator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 10. AI CHAT INTERFACE INTEGRATION                             -->
+        <!-- ============================================================= -->
+        <section class="section chat-section" id="chat">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Interactive AI Assistant</span>
+                    <h2 class="section-heading">Chat with <span class="gradient-name">Aishwarya’s AI</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">Ask questions about Aishwarya B.’s education, skills, projects, learning journey, achievements, and contact details.</p>
+                </div>
+
+                <div class="chat-terminal-container glass-panel">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="terminal-title">
+                            <i class="fa-solid fa-microchip"></i> Aishwarya AI Agent v1.0
+                        </div>
+                        <div class="terminal-status">
+                            <span class="live-dot"></span> Online
+                        </div>
+                    </div>
+
+                    <!-- Chat Message Display Area -->
+                    <div class="chat-screen" id="chatMessagesScreen">
+                        <div class="chat-entry bot-entry">
+                            <div class="bot-avatar"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div class="entry-bubble">
+                                Hello! I'm the AI assistant for <strong>Aishwarya B.</strong> Ask me about her education, programming skills, projects like the Fire Alarm or Turbidity system, or how to reach out!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Prompt Chips -->
+                    <div class="chat-quick-chips">
+                        <button class="prompt-chip" data-query="What are Aishwarya's core skills?">🛠️ Core Skills</button>
+                        <button class="prompt-chip" data-query="Tell me about her engineering projects.">🚀 Projects</button>
+                        <button class="prompt-chip" data-query="What is her educational background?">🎓 Education</button>
+                        <button class="prompt-chip" data-query="How can I contact Aishwarya?">📬 Contact Info</button>
+                    </div>
+
+                    <!-- Chat Input Form -->
+                    <form class="chat-input-bar" id="chatAgentForm">
+                        <input type="text" id="chatQueryInput" class="terminal-input" placeholder="Type a question about Aishwarya B...." autocomplete="off" required>
+                        <button type="submit" class="btn btn-chat-send" aria-label="Send query">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 11. CONTACT FORM WITH EMAIL API INTEGRATION HOOK             -->
+        <!-- ============================================================= -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="sub-label">Get in Touch</span>
+                    <h2 class="section-heading">Contact <span class="gradient-name">Aishwarya B.</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtext">Have an opportunity, question, or engineering project discussion? Let's connect!</p>
+                </div>
+
+                <div class="contact-layout-grid">
+                    <!-- Contact Information Cards -->
+                    <div class="contact-info-list">
+                        <div class="contact-badge-card glass-panel">
+                            <div class="badge-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="badge-text-group">
+                                <h4>Email</h4>
+                                <a href="mailto:aishunaik733@gmail.com" class="badge-link">aishunaik733@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-badge-card glass-panel">
+                            <div class="badge-icon"><i class="fa-brands fa-github"></i></div>
+                            <div class="badge-text-group">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/aishunaik02" target="_blank" rel="noopener noreferrer" class="badge-link">github.com/aishunaik02</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-badge-card glass-panel">
+                            <div class="badge-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="badge-text-group">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/aishwarya-b-1446b1438" target="_blank" rel="noopener noreferrer" class="badge-link">linkedin.com/in/aishwarya-b-1446b1438</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-panel glass-panel">
+                        <form id="contactMessageForm" class="styled-form">
+                            <div class="form-field-wrap">
+                                <label for="contactName" class="field-label">Name</label>
+                                <input type="text" id="contactName" name="name" class="field-input" placeholder="Your Full Name" required>
+                            </div>
+
+                            <div class="form-field-wrap">
+                                <label for="contactEmail" class="field-label">Email</label>
+                                <input type="email" id="contactEmail" name="email" class="field-input" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="form-field-wrap">
+                                <label for="contactMessage" class="field-label">Message</label>
+                                <textarea id="contactMessage" name="message" class="field-textarea" rows="4" placeholder="Hello Aishwarya, I would like to discuss..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-glow btn-submit-full" id="formSubmitBtn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+
+                            <!-- Submission Confirmation Feedback -->
+                            <div class="form-alert-feedback" id="formAlertFeedback" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 12. FOOTER SECTION                                            -->
+        <!-- ============================================================= -->
+        <footer class="portfolio-footer">
+            <div class="container footer-content-wrap">
+                <div class="footer-profile-summary">
+                    <a href="#home" class="brand-logo">
+                        <span class="logo-badge">&lt;A/&gt;</span>
+                        <span class="logo-title">Aishwarya<span class="accent-glow-dot">.</span></span>
+                    </a>
+                    <p class="footer-tagline-text">Computer Science Engineering Graduate • “Learning. Building. Experimenting. Becoming.”</p>
+                </div>
+
+                <!-- Footer Social Media Links with Accessible Labels -->
+                <div class="footer-social-links" aria-label="Social and Professional Profiles">
+                    <a href="https://github.com/aishunaik02" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile: aishunaik02">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aishwarya-b-1446b1438" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile of Aishwarya B.">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:aishunaik733@gmail.com" class="social-btn" aria-label="Send Email to aishunaik733@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="footer-bottom-line">
+                    <p>&copy; 2026 Aishwarya B. All rights reserved. Designed with modern futuristic aesthetics & glassmorphism.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Interactive JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

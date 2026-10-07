@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memory Match Game | Aishwarya B. Mini Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Outfit',Arial,sans-serif;
+  background:linear-gradient(135deg,#060813,#17153a,#302b63);
+  color:#fff;
+  min-height:100vh;
+  text-align:center;
+  padding:20px 10px;
+}
+.top-bar{max-width:850px;margin:0 auto 15px;display:flex;justify-content:space-between;align-items:center}
+.back-btn{color:#06b6d4;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);padding:8px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);transition:.2s}
+.back-btn:hover{background:rgba(6,182,212,0.2);color:#fff}
+.container{max-width:850px;margin:auto;padding:25px 20px;background:rgba(18,22,48,0.7);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;box-shadow:0 15px 40px rgba(0,0,0,0.5)}
+h1{margin:5px;font-size:32px;background:linear-gradient(135deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{opacity:.85;margin-bottom:20px;color:#94a3b8}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:14px;min-width:90px}
+.stat b{display:block;font-size:22px;margin-top:5px;color:#06b6d4}
+.controls{margin-bottom:15px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+select,button{padding:10px 18px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;font-family:inherit}
+select{background:#0d1124;color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.new-game{background:linear-gradient(135deg,#a855f7,#6366f1);color:#fff;box-shadow:0 0 15px rgba(168,85,247,0.4);transition:.2s}
+.new-game:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(168,85,247,0.6)}
+#message{min-height:30px;font-weight:bold;margin:12px;font-size:18px;color:#ffd166}
+#game{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:560px;margin:auto}
+.card{aspect-ratio:1;border:none;background:transparent;padding:0;perspective:700px;cursor:pointer}
+.inner{width:100%;height:100%;position:relative;transition:transform .45s;transform-style:preserve-3d}
+.card.flipped .inner,.card.matched .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;display:flex;justify-content:center;align-items:center;font-size:38px;box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+.front{background:linear-gradient(145deg,#4f46e5,#7c3aed);border:1px solid rgba(255,255,255,0.2);color:#fff}
+.back{background:#ffffff;color:#222;transform:rotateY(180deg)}
+.card.matched .back{outline:4px solid #10b981}
+@media(max-width:500px){h1{font-size:26px}.face{font-size:28px}#game{gap:8px}}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="../index.html#projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+  <span style="font-size:13px;color:#94a3b8">Aishwarya B. Mini Project</span>
+</div>
+<div class="container">
+<h1>🧠 Memory Match Game</h1>
+<div class="subtitle">Interactive Engineering Mini-Project built with HTML, CSS & JavaScript</div>
+<div class="stats">
+<div class="stat">Level<b id="level">Easy</b></div>
+<div class="stat">Moves<b id="moves">0</b></div>
+<div class="stat">Score<b id="score">0</b></div>
+<div class="stat">Time<b id="time">0s</b></div>
+</div>
+<div class="controls">
+<label style="font-weight:600">Difficulty:
+<select id="difficulty">
+<option value="easy">Easy - 8 Cards</option>
+<option value="medium">Medium - 12 Cards</option>
+<option value="hard">Hard - 16 Cards</option>
+</select>
+</label>
+<button class="new-game" onclick="newGame()"><i class="fa-solid fa-rotate-right"></i> New Game</button>
+</div>
+<div id="message">Find all matching pairs!</div>
+<div id="game"></div>
+</div>
+<script>
+const emojis=["🍎","🚀","🐱","⚽","🌟","🍕","🎵","🌈","🐼","🍩","🦋","🎮","🍉","🚗","🐸","🌻"];
+let firstCard=null,secondCard=null,locked=false,moves=0,score=0,matchedPairs=0,seconds=0,timer;
+function newGame(){
+clearInterval(timer);firstCard=null;secondCard=null;locked=false;moves=0;score=0;matchedPairs=0;seconds=0;
+const difficulty=document.getElementById("difficulty").value;
+const count=difficulty==="easy"?8:difficulty==="medium"?12:16;
+document.getElementById("level").textContent=difficulty.charAt(0).toUpperCase()+difficulty.slice(1);
+document.getElementById("moves").textContent="0";document.getElementById("score").textContent="0";document.getElementById("time").textContent="0s";document.getElementById("message").textContent="Find all matching pairs!";
+const selected=emojis.slice(0,count/2);const cards=[...selected,...selected].sort(()=>Math.random()-.5);const game=document.getElementById("game");game.innerHTML="";
+cards.forEach(emoji=>{const card=document.createElement("button");card.className="card";card.dataset.value=emoji;card.innerHTML='<div class="inner"><div class="face front">?</div><div class="face back">'+emoji+'</div></div>';card.onclick=()=>flipCard(card);game.appendChild(card)});
+timer=setInterval(()=>{seconds++;document.getElementById("time").textContent=seconds+"s"},1000)
+}
+function flipCard(card){
+if(locked||card===firstCard||card.classList.contains("matched"))return;
+card.classList.add("flipped");
+if(!firstCard){firstCard=card;return}
+secondCard=card;locked=true;moves++;document.getElementById("moves").textContent=moves;
+if(firstCard.dataset.value===secondCard.dataset.value){
+firstCard.classList.add("matched");secondCard.classList.add("matched");matchedPairs++;score+=100;score=Math.max(score-moves*2,0);document.getElementById("score").textContent=score;firstCard=null;secondCard=null;locked=false;
+const total=document.querySelectorAll(".card").length;
+if(matchedPairs===total/2){clearInterval(timer);score+=Math.max(0,500-seconds*5);document.getElementById("score").textContent=score;document.getElementById("message").textContent="🎉 You Won! Final Score: "+score}
+}else{setTimeout(()=>{firstCard.classList.remove("flipped");secondCard.classList.remove("flipped");firstCard=null;secondCard=null;locked=false},700)}
+}
+document.getElementById("difficulty").addEventListener("change",newGame);newGame();
+</script>
+</body>
+</html>
